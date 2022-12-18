@@ -21,7 +21,7 @@
             <webMaster>moore@eds.org (Jonathan Moore)</webMaster>
         
         
-        <lastBuildDate>Wed, 14 Dec 2022 21:06:53 -0800</lastBuildDate>
+        <lastBuildDate>Sun, 18 Dec 2022 15:18:13 -0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="/rss.xml" />
         
@@ -46,6 +46,79 @@
 &lt;h2 id=&#34;hawking-radiation&#34;&gt;Hawking Radiation&lt;/h2&gt;
 &lt;p&gt;But black holes are not a perfect trap. If a pair of victual particles is instantiated at the event horizon, it is possible that one falls into the black hole and the other escapes into the universe. This results in the black hole loosing mass leading to it&amp;rsquo;s eventual evaporation.&lt;/p&gt;
 &lt;p&gt;But these virtual particles are brought in to existence entangled, with one ending up inside and one outside the black hole. If entanglement is a cupping in space but not time, might it be possible that entangled partial inside the black hole can freely communicate information out to its sibling as their communicate is not trapped by stopped time?&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Post Labor</title>
+                <link>/posts/post-labor/</link>
+                <guid isPermaLink="true">/posts/post-labor/</guid>
+                <pubDate>Sun, 04 Dec 2022 09:05:56 -0800</pubDate>
+                
+                    <author>moore@eds.org (Jonathan Moore)</author>
+                
+                
+                
+                    <description>&lt;h1 id=&#34;post-labor&#34;&gt;Post Labor&lt;/h1&gt;
+&lt;p&gt;Timeline predictions of breakthrough technology are notoriously unreliable; but I think it is worth thinking about them before they arrive. In this post we will discuss the idea that automation will lead to a post labor economy in which labor is not longer required to turn capital in to wealth. The upends much of the macro economic theories the underpin both socialist and capitalist systems.&lt;/p&gt;
+&lt;h1 id=&#34;decoupling&#34;&gt;Decoupling&lt;/h1&gt;
+&lt;p&gt;One might argue that automation has played role of driving labor out of industries for centuries.&lt;/p&gt;
+&lt;p&gt;European farming in the 1800s &lt;a href=&#34;https://ourworldindata.org/employment-in-agriculture&#34;&gt;accounted for well over 50%&lt;/a&gt; of the work force where today it is around 3%. This drop is not driven just by growing populations but by drastic reductions in the number of people employed in the industry. This was a drastic realignment of the economies but it was accompanied by a lateral move with most of the &lt;a href=&#34;https://www.minnpost.com/macro-micro-minnesota/2012/02/history-lessons-understanding-decline-manufacturing/&#34;&gt;workforce switching into services and industry&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Where todays automation is different, might it still just be a move of the workforce and not and end to labor? I believe the answer is no, this change is different.&lt;/p&gt;
+&lt;p&gt;Seance it&amp;rsquo;s recovery from the great recession (2007-2009) the United States has seen a sharp decoupling of productivity, employment, and wages. This effect has been dubbed &lt;a href=&#34;https://www.nytimes.com/2012/12/12/opinion/global/jobs-productivity-and-the-great-decoupling.html&#34;&gt;The Great Decoupling&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/decoupeling.webp&#34; alt=&#34;Decoupling&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I believe this decoupling is driven by a shift from automating maniacal processes to automating knowledge.&lt;/p&gt;
+&lt;h1 id=&#34;knowledge-automation&#34;&gt;Knowledge Automation&lt;/h1&gt;
+&lt;p&gt;The history of knowledge is ruffly: oral traditions, written language, the printing press, bureaucracy, information technology (IT), and now AI. Each change led to new efficiencies which drove productivity, but a significant change happened with the introduction of information technology.&lt;/p&gt;
+&lt;p&gt;Prior to introduction IT the changes allowed people better, recorded, disseminate, and organism information; but information technology was automation of data &lt;strong&gt;processing&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;One of the largest effects of automation of data processing was the collapse of the large bureaucracy that historically had managed information.  Bureaucracies processed information with people and filing systems which were replaced by database systems. A database could replace entire buildings of people and filing cabinets with a hand full servers and people. Event more astounding the rate of improvement in our IT systems which fallowing Moore&amp;rsquo;s Law were doubling in capability every 24 months.&lt;/p&gt;
+&lt;p&gt;The weakness of databases and IT systems was that they worked only information and not knowledge. With information one can sum a number, count words, and average balances; but these are all quantitative questions. In contrast questions of knowledge are categorical.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Information is quantitative where knowledge is categorical.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;the-power-of-knowledge&#34;&gt;The power of knowledge&lt;/h1&gt;
+&lt;p&gt;The power of categorical information is transformative.&lt;/p&gt;
+&lt;p&gt;Image generation systems such as OpenAI&amp;rsquo;s &lt;a href=&#34;https://labs.openai.com/&#34;&gt;DALL-E&lt;/a&gt; let us ask for images with english prompts with impressive results:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;A realistic painting of a robot lawyer arguing for AI rights to the supreme court of the united states.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;/robot-lawyer.png&#34; alt=&#34;Robot Lawyer&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here DALL-E &amp;ldquo;understood&amp;rdquo; the catagories of &amp;ldquo;painting&amp;rdquo;, &amp;ldquo;robot&amp;rdquo;, &amp;ldquo;arguing&amp;rdquo;, and &amp;ldquo;United States court&amp;rdquo;, etc.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://openai.com/blog/chatgpt/&#34;&gt;ChatGTP&lt;/a&gt;, also from OpenAI, can generate text responses instead of images:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;prompt: Tell me a story of how spirits gave humans the knowledge of spinning yarn&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Long ago, in a time before humans knew how to spin yarn, the spirits of the earth, air, water, and fire came together to teach them this valuable skill.&lt;/p&gt;
+&lt;p&gt;The earth spirit taught them how to collect and prepare the fibers from plants and animals, showing them which plants had the strongest and most durable fibers, and how to extract and clean the fibers so they could be used to make yarn.&lt;/p&gt;
+&lt;p&gt;The air spirit taught them how to spin the fibers into yarn using a spinning wheel, showing them how to hold the fibers tightly and how to use the wheel to twist the fibers into a strong and consistent yarn.&lt;/p&gt;
+&lt;p&gt;The water spirit taught them how to dye the yarn using natural dyes from plants and flowers, showing them how to mix the dyes to create different colors and how to use the dyes to add color and pattern to the yarn.&lt;/p&gt;
+&lt;p&gt;Finally, the fire spirit taught them how to use the yarn to weave and knit fabrics, showing them how to use looms and needles to create beautiful and functional garments, blankets, and other items.&lt;/p&gt;
+&lt;p&gt;With the help of the spirits, humans learned how to spin yarn and use it to create all kinds of useful and beautiful things. And they were forever grateful to the spirits for sharing their knowledge and wisdom with them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here ChatGTP understands the category of &amp;ldquo;a story about spirits&amp;rdquo;, and &amp;ldquo;giving gifts&amp;rdquo;, and of &amp;ldquo;fiber crafts&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;In both these examples the results are synthesized from learned catagories. This is a fundamental shift for the types of quantitative questions and answers that computer systems are capable of.&lt;/p&gt;
+&lt;p&gt;Systems like DALL-E and ChatGTP are impressive, but progress in this field is not new. Automated automated legal discovery to &lt;a href=&#34;https://www.nytimes.com/2011/03/05/science/05legal.html&#34;&gt;replace teams of lawyers&lt;/a&gt;, and in the medical field &lt;a href=&#34;https://en.wikipedia.org/wiki/Computer-aided_diagnosis&#34;&gt;computer-aided diagnosis&lt;/a&gt; is a decades old field of research.&lt;/p&gt;
+&lt;p&gt;Automated knowledge is already here and a growing driver for productivity.&lt;/p&gt;
+&lt;h1 id=&#34;automated-knowledge-effects-on-labor&#34;&gt;Automated Knowledge effects on labor&lt;/h1&gt;
+&lt;p&gt;Knowledge automation fundamentally different than automating a process. Each time we automate a process it requires a new machine, a thresher for separating wheat from chaff, a automated loom to make cloth, or train to move goods. In contrast building knowledge systems is limited largely by the need to collect examples to train on. The machine can largely remain unchanged while working in a large number of different domains. As we have more advanced knowledge systems there effects are cross cutting, effecting the entire economy and not one vertical at a time.&lt;/p&gt;
+&lt;p&gt;Postulating about the future, we can imagine a time when no, or almost no, people are required to turn some capital, a farm, a mine, or a factory, into wealth. A dystopia where a small percentage of the population receives the bounty of the planet while the vast majority are left to survive on scraps.&lt;/p&gt;
+&lt;p&gt;This doom, or coming closer to it than we already are, may not be the only option thou.&lt;/p&gt;
+&lt;p&gt;Automation seems to also reduce the need for scale to deliver efficiency. Corporations reduced there head count when them moved form filing cabinets to database servers. CNC tool are making small production manufacturing economic in the U.S. And the web and automated package handling has given new life to small manufactures and artisans.&lt;/p&gt;
+&lt;p&gt;Tt is possible that automation will remove the advantages of scale that are one of the drivers of the concentration of capital in to the hands of the few, averting the dystopia of vastly unequal holding of wealth.&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;As automaton of knowledge continues, there will be a dramatic shift in society as fewer and fewer people are needed in the labor market. It is my expectation that this will happen simultaneously across industries leaving few changes for people to seek new employment in different jobs. This will necessitate new social contracts and a change in our couture&amp;rsquo;s relation to work.&lt;/p&gt;
 </description>
                 
                 

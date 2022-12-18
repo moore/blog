@@ -16,7 +16,7 @@ Where todays automation is different, might it still just be a move of the workf
 
 Seance it's recovery from the great recession (2007-2009) the United States has seen a sharp decoupling of productivity, employment, and wages. This effect has been dubbed [The Great Decoupling](https://www.nytimes.com/2012/12/12/opinion/global/jobs-productivity-and-the-great-decoupling.html) 
 
-![Decoupling](decoupeling.webp)
+![Decoupling](/decoupeling.webp)
 
 I believe this decoupling is driven by a shift from automating maniacal processes to automating knowledge.
 
@@ -38,7 +38,7 @@ Image generation systems such as OpenAI's [DALL-E](https://labs.openai.com/) let
 
 >"A realistic painting of a robot lawyer arguing for AI rights to the supreme court of the united states."
 
-![Robot Lawyer](robot-lawyer.png)
+![Robot Lawyer](/robot-lawyer.png)
 
 Here DALL-E "understood" the catagories of "painting", "robot", "arguing", and "United States court", etc.
 
