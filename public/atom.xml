@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Jonathan Moore</title>
     <subtitle type="html">A place for my thoughts</subtitle>
-    <updated>2022-11-26T08:56:42-08:00</updated>
+    <updated>2022-12-14T21:06:53-08:00</updated>
     <id>/</id>
     <link rel="alternate" type="text/html" href="/" />
     <link rel="self" type="application/atom&#43;xml" href="/atom.xml" />
@@ -16,4 +16,42 @@
             </author>
     
     <generator uri="https://gohugo.io/" version="0.107.0">Hugo</generator>
+        <entry>
+            <title type="text">Entanglement Is Space Only</title>
+            <link rel="alternate" type="text/html" href="/posts/entanglement-is-space-only/" />
+            <id>/posts/entanglement-is-space-only/</id>
+            <updated>2022-12-14T21:06:31-08:00</updated>
+            <published>2022-12-14T20:35:55-08:00</published>
+            <author>
+                    <name>Jonathan Moore</name>
+                    <uri>/</uri>
+                    <email>moore@eds.org</email>
+                    </author>
+            <summary type="html">Entanglement, Space Only Relations, and Black Hole Information Are entangled partials connected in space but not time, and if so is that how information escapes the event horizon of a black hole?
+Entanglement When a pair of entangled partials are created they create a unique configuration of the universe.</summary>
+            
+                <content type="html">&lt;h1 id=&#34;entanglement-space-only-relations-and-black-hole-information&#34;&gt;Entanglement, Space Only Relations, and Black Hole Information&lt;/h1&gt;
+&lt;p&gt;Are entangled partials connected in space but not time, and if so is that how information escapes the event horizon of a black hole?&lt;/p&gt;
+&lt;h2 id=&#34;entanglement&#34;&gt;Entanglement&lt;/h2&gt;
+&lt;p&gt;When a pair of entangled partials are created they create a unique configuration of the universe. In most configurations we experience information is carried though space-time as excitations of some field, higgs, electro magnetic, etc; but entangled partials seems to propagate information though space only and not time.&lt;/p&gt;
+&lt;p&gt;We see this in the instantaneous nature of &amp;ldquo;spooky action at a distance&amp;rdquo; as well as the apparent back propagation of information thought time seen in the delayed choice quantum erasure experiments. What ever the relation that holds entangled partials together it seems to be one that interacts with spae but not time.&lt;/p&gt;
+&lt;h2 id=&#34;black-holes&#34;&gt;Black Holes&lt;/h2&gt;
+&lt;p&gt;One interpretation of why escape is impossible from a black hole is that the the stretching of space to infinity stops the passage of time, and it is this stoppage of time that makes black holes a perfect trap.&lt;/p&gt;
+&lt;h2 id=&#34;hawking-radiation&#34;&gt;Hawking Radiation&lt;/h2&gt;
+&lt;p&gt;But black holes are not a perfect trap. If a pair of victual particles is instantiated at the event horizon, it is possible that one falls into the black hole and the other escapes into the universe. This results in the black hole loosing mass leading to it&amp;rsquo;s eventual evaporation.&lt;/p&gt;
+&lt;p&gt;But these virtual particles are brought in to existence entangled, with one ending up inside and one outside the black hole. If entanglement is a cupping in space but not time, might it be possible that entangled partial inside the black hole can freely communicate information out to its sibling as their communicate is not trapped by stopped time?&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
 </feed>
