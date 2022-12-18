@@ -18,7 +18,7 @@ Seance it's recovery from the great recession (2007-2009) the United States has 
 
 ![Decoupling](/decoupeling.webp)
 
-I believe this decoupling is driven by a shift from automating maniacal processes to automating knowledge.
+I believe this decoupling is driven by a shift from automating mechanical processes to automating knowledge.
 
 # Knowledge Automation
 The history of knowledge is ruffly: oral traditions, written language, the printing press, bureaucracy, information technology (IT), and now AI. Each change led to new efficiencies which drove productivity, but a significant change happened with the introduction of information technology. 
