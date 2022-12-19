@@ -21,7 +21,7 @@
             <webMaster>moore@eds.org (Jonathan Moore)</webMaster>
         
         
-        <lastBuildDate>Sun, 18 Dec 2022 15:18:13 -0800</lastBuildDate>
+        <lastBuildDate>Sun, 18 Dec 2022 18:08:52 -0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="/rss.xml" />
         
@@ -78,11 +78,11 @@
 &lt;p&gt;Where todays automation is different, might it still just be a move of the workforce and not and end to labor? I believe the answer is no, this change is different.&lt;/p&gt;
 &lt;p&gt;Seance it&amp;rsquo;s recovery from the great recession (2007-2009) the United States has seen a sharp decoupling of productivity, employment, and wages. This effect has been dubbed &lt;a href=&#34;https://www.nytimes.com/2012/12/12/opinion/global/jobs-productivity-and-the-great-decoupling.html&#34;&gt;The Great Decoupling&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/decoupeling.webp&#34; alt=&#34;Decoupling&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I believe this decoupling is driven by a shift from automating maniacal processes to automating knowledge.&lt;/p&gt;
+&lt;p&gt;I believe this decoupling is driven by a shift from automating mechanical processes to automating knowledge.&lt;/p&gt;
 &lt;h1 id=&#34;knowledge-automation&#34;&gt;Knowledge Automation&lt;/h1&gt;
 &lt;p&gt;The history of knowledge is ruffly: oral traditions, written language, the printing press, bureaucracy, information technology (IT), and now AI. Each change led to new efficiencies which drove productivity, but a significant change happened with the introduction of information technology.&lt;/p&gt;
 &lt;p&gt;Prior to introduction IT the changes allowed people better, recorded, disseminate, and organism information; but information technology was automation of data &lt;strong&gt;processing&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;One of the largest effects of automation of data processing was the collapse of the large bureaucracy that historically had managed information.  Bureaucracies processed information with people and filing systems which were replaced by database systems. A database could replace entire buildings of people and filing cabinets with a hand full servers and people. Event more astounding the rate of improvement in our IT systems which fallowing Moore&amp;rsquo;s Law were doubling in capability every 24 months.&lt;/p&gt;
+&lt;p&gt;One of the largest effects of automation of data processing was the collapse of the large bureaucracy that historically had managed information.  Bureaucracies processed information with people and filing systems which were replaced by database systems. A database could replace entire buildings of people and filing cabinets with a hand full servers and people. Event more astounding the rate of improvement in our IT systems which following Moore&amp;rsquo;s Law were doubling in capability every 24 months.&lt;/p&gt;
 &lt;p&gt;The weakness of databases and IT systems was that they worked only information and not knowledge. With information one can sum a number, count words, and average balances; but these are all quantitative questions. In contrast questions of knowledge are categorical.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Information is quantitative where knowledge is categorical.&lt;/strong&gt;&lt;/p&gt;
@@ -109,12 +109,12 @@
 &lt;/blockquote&gt;
 &lt;p&gt;Here ChatGTP understands the category of &amp;ldquo;a story about spirits&amp;rdquo;, and &amp;ldquo;giving gifts&amp;rdquo;, and of &amp;ldquo;fiber crafts&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;In both these examples the results are synthesized from learned catagories. This is a fundamental shift for the types of quantitative questions and answers that computer systems are capable of.&lt;/p&gt;
-&lt;p&gt;Systems like DALL-E and ChatGTP are impressive, but progress in this field is not new. Automated automated legal discovery to &lt;a href=&#34;https://www.nytimes.com/2011/03/05/science/05legal.html&#34;&gt;replace teams of lawyers&lt;/a&gt;, and in the medical field &lt;a href=&#34;https://en.wikipedia.org/wiki/Computer-aided_diagnosis&#34;&gt;computer-aided diagnosis&lt;/a&gt; is a decades old field of research.&lt;/p&gt;
+&lt;p&gt;Systems like DALL-E and ChatGTP are impressive, but progress in this field is not new. Automated legal discovery to &lt;a href=&#34;https://www.nytimes.com/2011/03/05/science/05legal.html&#34;&gt;replace teams of lawyers&lt;/a&gt;, and in the medical field &lt;a href=&#34;https://en.wikipedia.org/wiki/Computer-aided_diagnosis&#34;&gt;computer-aided diagnosis&lt;/a&gt; is a decades old field of research.&lt;/p&gt;
 &lt;p&gt;Automated knowledge is already here and a growing driver for productivity.&lt;/p&gt;
 &lt;h1 id=&#34;automated-knowledge-effects-on-labor&#34;&gt;Automated Knowledge effects on labor&lt;/h1&gt;
-&lt;p&gt;Knowledge automation fundamentally different than automating a process. Each time we automate a process it requires a new machine, a thresher for separating wheat from chaff, a automated loom to make cloth, or train to move goods. In contrast building knowledge systems is limited largely by the need to collect examples to train on. The machine can largely remain unchanged while working in a large number of different domains. As we have more advanced knowledge systems there effects are cross cutting, effecting the entire economy and not one vertical at a time.&lt;/p&gt;
+&lt;p&gt;Knowledge automation is fundamentally different than automating a process. Each time we automate a process it requires a new machine, a thresher for separating wheat from chaff, a automated loom to make cloth, or train to move goods. In contrast building knowledge systems is limited largely by the need to collect examples to train on. The machine can largely remain unchanged while working in a large number of different domains. As we have more advanced knowledge systems there effects are cross cutting, effecting the entire economy and not one vertical at a time.&lt;/p&gt;
 &lt;p&gt;Postulating about the future, we can imagine a time when no, or almost no, people are required to turn some capital, a farm, a mine, or a factory, into wealth. A dystopia where a small percentage of the population receives the bounty of the planet while the vast majority are left to survive on scraps.&lt;/p&gt;
-&lt;p&gt;This doom, or coming closer to it than we already are, may not be the only option thou.&lt;/p&gt;
+&lt;p&gt;This doom, or coming closer to it than we already are, may not be the only option though.&lt;/p&gt;
 &lt;p&gt;Automation seems to also reduce the need for scale to deliver efficiency. Corporations reduced there head count when them moved form filing cabinets to database servers. CNC tool are making small production manufacturing economic in the U.S. And the web and automated package handling has given new life to small manufactures and artisans.&lt;/p&gt;
 &lt;p&gt;Tt is possible that automation will remove the advantages of scale that are one of the drivers of the concentration of capital in to the hands of the few, averting the dystopia of vastly unequal holding of wealth.&lt;/p&gt;
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;

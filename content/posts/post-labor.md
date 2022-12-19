@@ -25,7 +25,7 @@ The history of knowledge is ruffly: oral traditions, written language, the print
 
 Prior to introduction IT the changes allowed people better, recorded, disseminate, and organism information; but information technology was automation of data **processing**. 
 
-One of the largest effects of automation of data processing was the collapse of the large bureaucracy that historically had managed information.  Bureaucracies processed information with people and filing systems which were replaced by database systems. A database could replace entire buildings of people and filing cabinets with a hand full servers and people. Event more astounding the rate of improvement in our IT systems which fallowing Moore's Law were doubling in capability every 24 months.
+One of the largest effects of automation of data processing was the collapse of the large bureaucracy that historically had managed information.  Bureaucracies processed information with people and filing systems which were replaced by database systems. A database could replace entire buildings of people and filing cabinets with a hand full servers and people. Event more astounding the rate of improvement in our IT systems which following Moore's Law were doubling in capability every 24 months.
 
 The weakness of databases and IT systems was that they worked only information and not knowledge. With information one can sum a number, count words, and average balances; but these are all quantitative questions. In contrast questions of knowledge are categorical.
 
@@ -62,17 +62,17 @@ Here ChatGTP understands the category of "a story about spirits", and "giving gi
 
 In both these examples the results are synthesized from learned catagories. This is a fundamental shift for the types of quantitative questions and answers that computer systems are capable of.
 
-Systems like DALL-E and ChatGTP are impressive, but progress in this field is not new. Automated automated legal discovery to [replace teams of lawyers](https://www.nytimes.com/2011/03/05/science/05legal.html), and in the medical field [computer-aided diagnosis](https://en.wikipedia.org/wiki/Computer-aided_diagnosis) is a decades old field of research.  
+Systems like DALL-E and ChatGTP are impressive, but progress in this field is not new. Automated legal discovery to [replace teams of lawyers](https://www.nytimes.com/2011/03/05/science/05legal.html), and in the medical field [computer-aided diagnosis](https://en.wikipedia.org/wiki/Computer-aided_diagnosis) is a decades old field of research.  
 
 Automated knowledge is already here and a growing driver for productivity.
 
 # Automated Knowledge effects on labor
 
-Knowledge automation fundamentally different than automating a process. Each time we automate a process it requires a new machine, a thresher for separating wheat from chaff, a automated loom to make cloth, or train to move goods. In contrast building knowledge systems is limited largely by the need to collect examples to train on. The machine can largely remain unchanged while working in a large number of different domains. As we have more advanced knowledge systems there effects are cross cutting, effecting the entire economy and not one vertical at a time.
+Knowledge automation is fundamentally different than automating a process. Each time we automate a process it requires a new machine, a thresher for separating wheat from chaff, a automated loom to make cloth, or train to move goods. In contrast building knowledge systems is limited largely by the need to collect examples to train on. The machine can largely remain unchanged while working in a large number of different domains. As we have more advanced knowledge systems there effects are cross cutting, effecting the entire economy and not one vertical at a time.
 
 Postulating about the future, we can imagine a time when no, or almost no, people are required to turn some capital, a farm, a mine, or a factory, into wealth. A dystopia where a small percentage of the population receives the bounty of the planet while the vast majority are left to survive on scraps.
 
-This doom, or coming closer to it than we already are, may not be the only option thou. 
+This doom, or coming closer to it than we already are, may not be the only option though. 
 
 Automation seems to also reduce the need for scale to deliver efficiency. Corporations reduced there head count when them moved form filing cabinets to database servers. CNC tool are making small production manufacturing economic in the U.S. And the web and automated package handling has given new life to small manufactures and artisans.
 
