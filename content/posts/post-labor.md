@@ -5,34 +5,34 @@ draft: false
 ---
 
 # Post Labor
-Timeline predictions of breakthrough technology are notoriously unreliable; but I think it is worth thinking about them before they arrive. In this post we will discuss the idea that automation will lead to a post labor economy in which labor is not longer required to turn capital in to wealth. The upends much of the macro economic theories the underpin both socialist and capitalist systems.
+Timeline predictions of breakthrough technology are notoriously unreliable; but I think it is worth thinking about them before they arrive. In this post we will discuss the idea that automation will lead to a post labor economy in which labor is no longer required to turn capital into wealth. This upends much of the macro economic theories that underpin both socialist and capitalist systems.
 
 # Decoupling
-One might argue that automation has played role of driving labor out of industries for centuries. 
+One might argue that automation has played the role of driving labor out of industries for centuries. 
 
-European farming in the 1800s [accounted for well over 50%](https://ourworldindata.org/employment-in-agriculture) of the work force where today it is around 3%. This drop is not driven just by growing populations but by drastic reductions in the number of people employed in the industry. This was a drastic realignment of the economies but it was accompanied by a lateral move with most of the [workforce switching into services and industry](https://www.minnpost.com/macro-micro-minnesota/2012/02/history-lessons-understanding-decline-manufacturing/).
+European farming in the 1800s [accounted for well over 50%](https://ourworldindata.org/employment-in-agriculture) of the work force where today it is around 3%. This drop is not driven just by growing populations but by drastic reductions in the number of people employed in the industry. This was a realignment of the economy but it was accompanied by a lateral move with most of the [workforce switching into services and industry](https://www.minnpost.com/macro-micro-minnesota/2012/02/history-lessons-understanding-decline-manufacturing/).
 
-Where todays automation is different, might it still just be a move of the workforce and not and end to labor? I believe the answer is no, this change is different.
+Where today's automation is different, might it still just be a move of the workforce and not an end to labor? I believe the answer is no, this change is different.
 
-Seance it's recovery from the great recession (2007-2009) the United States has seen a sharp decoupling of productivity, employment, and wages. This effect has been dubbed [The Great Decoupling](https://www.nytimes.com/2012/12/12/opinion/global/jobs-productivity-and-the-great-decoupling.html) 
+Since its recovery from the great recession (2007-2009) the United States has seen a sharp decoupling of productivity, employment, and wages. This effect has been dubbed [The Great Decoupling](https://www.nytimes.com/2012/12/12/opinion/global/jobs-productivity-and-the-great-decoupling.html) 
 
 ![Decoupling](/decoupeling.webp)
 
 I believe this decoupling is driven by a shift from automating mechanical processes to automating knowledge.
 
 # Knowledge Automation
-The history of knowledge is ruffly: oral traditions, written language, the printing press, bureaucracy, information technology (IT), and now AI. Each change led to new efficiencies which drove productivity, but a significant change happened with the introduction of information technology. 
+<!-- rephrase history of knowledge to ??? -->The development of knowledge technology has progressed along the path of: oral traditions, written language, the printing press, bureaucracy, information technology (IT), and now AI. Each change led to new efficiencies which drove productivity, but a significant change happened with the introduction of information technology. 
 
-Prior to introduction IT the changes allowed people better, recorded, disseminate, and organism information; but information technology was automation of data **processing**. 
+Prior to the introduction of IT, each development allowed people to better record, disseminate, and organize information - but information technology was the automation of data **processing**. 
 
-One of the largest effects of automation of data processing was the collapse of the large bureaucracy that historically had managed information.  Bureaucracies processed information with people and filing systems which were replaced by database systems. A database could replace entire buildings of people and filing cabinets with a hand full servers and people. Event more astounding the rate of improvement in our IT systems which following Moore's Law were doubling in capability every 24 months.
+One of the largest effects of automation of data processing was the collapse of the large bureaucracy that historically had managed information.  Bureaucracies processed information with people and filing systems which were replaced by database systems. A database could replace entire buildings of people and filing cabinets with a handful servers and people. Even more astounding: the rate of improvement in our IT systems, following Moore's Law, were doubling in capability every 24 months.
 
-The weakness of databases and IT systems was that they worked only information and not knowledge. With information one can sum a number, count words, and average balances; but these are all quantitative questions. In contrast questions of knowledge are categorical.
-
+The weakness of databases and IT systems was that they worked only on information and not knowledge. With information one can sum a number, count words, and average balances; but these are all quantitative questions. In contrast, questions of knowledge are categorical.
+<!-- paraphrase "categorical" at least once here -->
 >**Information is quantitative where knowledge is categorical.**
 
 # The power of knowledge
-The power of categorical information is transformative. 
+The power of categorical information is transformative. <!-- expand this -->
 
 Image generation systems such as OpenAI's [DALL-E](https://labs.openai.com/) let us ask for images with english prompts with impressive results:
 
@@ -62,22 +62,22 @@ Here ChatGTP understands the category of "a story about spirits", and "giving gi
 
 In both these examples the results are synthesized from learned catagories. This is a fundamental shift for the types of quantitative questions and answers that computer systems are capable of.
 
-Systems like DALL-E and ChatGTP are impressive, but progress in this field is not new. Automated legal discovery to [replace teams of lawyers](https://www.nytimes.com/2011/03/05/science/05legal.html), and in the medical field [computer-aided diagnosis](https://en.wikipedia.org/wiki/Computer-aided_diagnosis) is a decades old field of research.  
+Systems like DALL-E and ChatGTP are impressive, but progress in this field is not new. Automated legal discovery has allowed us to [replace teams of lawyers](https://www.nytimes.com/2011/03/05/science/05legal.html), and in the medical field [computer-aided diagnosis](https://en.wikipedia.org/wiki/Computer-aided_diagnosis) is a decades old field of research.  
 
 Automated knowledge is already here and a growing driver for productivity.
 
 # Automated Knowledge effects on labor
 
-Knowledge automation is fundamentally different than automating a process. Each time we automate a process it requires a new machine, a thresher for separating wheat from chaff, a automated loom to make cloth, or train to move goods. In contrast building knowledge systems is limited largely by the need to collect examples to train on. The machine can largely remain unchanged while working in a large number of different domains. As we have more advanced knowledge systems there effects are cross cutting, effecting the entire economy and not one vertical at a time.
+Knowledge automation is fundamentally different than automating a procedural task. Each time we automate a procedure it requires a new machine: a thresher for separating wheat from chaff, an loom to make cloth, or a train to move goods. In contrast, when we build knowledge systems, we are limited by the need to collect examples to train on. The machine can largely remain unchanged while working in a large number of different domains. As we have more advanced knowledge systems their effects are cross cutting, affecting the entire economy and not one vertical at a time.
 
-Postulating about the future, we can imagine a time when no, or almost no, people are required to turn some capital, a farm, a mine, or a factory, into wealth. A dystopia where a small percentage of the population receives the bounty of the planet while the vast majority are left to survive on scraps.
+Postulating about the future, we can imagine a time when almost no people are required to turn some capital - a farm, a mine, or a factory - into wealth, resulting in a dystopia where a small percentage of the population receives the bounty of the planet while the vast majority are left to survive on scraps.
 
-This doom, or coming closer to it than we already are, may not be the only option though. 
+This may not be the only option though. 
 
-Automation seems to also reduce the need for scale to deliver efficiency. Corporations reduced there head count when them moved form filing cabinets to database servers. CNC tool are making small production manufacturing economic in the U.S. And the web and automated package handling has given new life to small manufactures and artisans.
+Automation enables delivering goods efficiently without needing to scale production. Corporations reduced their head count when they moved from filing cabinets to database servers. CNC tools are making it economical to run small production manufacturing in the U.S. again. And the web, and automated package handling has given new life to small manufacturers and artisans.
 
-Tt is possible that automation will remove the advantages of scale that are one of the drivers of the concentration of capital in to the hands of the few, averting the dystopia of vastly unequal holding of wealth.
+The current requirement of scale drives the concentration of capital into the hands of the few. If automation reverses this trend, we may avert the dystopian outcomes of vastly unequal holding of wealth.
 
 # Conclusion
 
-As automaton of knowledge continues, there will be a dramatic shift in society as fewer and fewer people are needed in the labor market. It is my expectation that this will happen simultaneously across industries leaving few changes for people to seek new employment in different jobs. This will necessitate new social contracts and a change in our couture's relation to work. 
+As automaton of knowledge continues, there will be a dramatic shift in society as fewer and fewer people are needed in the labor market. It is my expectation that this will happen simultaneously across industries leaving few chances for people to seek new employment in different jobs. This will necessitate new social contracts and a change in our culture's relation to work. 
