@@ -21,10 +21,201 @@
             <webMaster>moore@eds.org (Jonathan Moore)</webMaster>
         
         
-        <lastBuildDate>Sun, 18 Dec 2022 23:11:07 -0800</lastBuildDate>
+        <lastBuildDate>Sun, 05 Mar 2023 13:44:20 -0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="/rss.xml" />
         
+        
+            <item>
+                <title>Memory Management</title>
+                <link>/posts/memory-mangment/</link>
+                <guid isPermaLink="true">/posts/memory-mangment/</guid>
+                <pubDate>Sun, 26 Feb 2023 14:15:43 -0800</pubDate>
+                
+                    <author>moore@eds.org (Jonathan Moore)</author>
+                
+                
+                
+                    <description>&lt;h1 id=&#34;memory-management&#34;&gt;Memory Management&lt;/h1&gt;
+&lt;p&gt;Colang intends to achieve high throughput and low latency using two strategies: static typing and dispatch, and efficient memory management. In this post we will review common approaches to memory management. The post is background for a later post describing memory management Colang.&lt;/p&gt;
+&lt;h2 id=&#34;balance&#34;&gt;Balance&lt;/h2&gt;
+&lt;p&gt;The key challenge in memory management is knowing when some allocation is no longer in use and can be reclaimed. Once some memory is reclaimed it will either be returned to the operating system or recycled in the process to satisfy a subsequent dynamic memory allocation.&lt;/p&gt;
+&lt;p&gt;There are many approaches to memory management today. All approaches must ballance between:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Efficiency&lt;/li&gt;
+&lt;li&gt;Latency&lt;/li&gt;
+&lt;li&gt;Throughput&lt;/li&gt;
+&lt;li&gt;Safety&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;efficiency&#34;&gt;Efficiency&lt;/h3&gt;
+&lt;p&gt;A memory management approach is can be said to be efficient if the majority of memory provided by the hardware can be put to use serving the functional goals of the software. Common causes of inefficient use of memory are overhead, fragmentation, and stale allocations.&lt;/p&gt;
+&lt;p&gt;Overhead is caused by additional memory utilization for the sole purpose of the memory management.&lt;/p&gt;
+&lt;p&gt;Fragmentation occurs when there are ranges of memory which can not be allocated for functional use either because they are too small or due to inefficiency in the allocation strategy.&lt;/p&gt;
+&lt;p&gt;Stale allocation occur when an allocation is no longer needed for the function of the application but is not available to service new allocation.&lt;/p&gt;
+&lt;h3 id=&#34;latency&#34;&gt;Latency&lt;/h3&gt;
+&lt;p&gt;Latency is the number of cycles spent servicing an allocation request.&lt;/p&gt;
+&lt;h3 id=&#34;throughput&#34;&gt;Throughput&lt;/h3&gt;
+&lt;p&gt;Is the total allocations per unit time an allocator can service. It is not only dependent on latency but also on time spent on reclaim and copying in the case of moving memory manager.&lt;/p&gt;
+&lt;h3 id=&#34;safety&#34;&gt;Safety&lt;/h3&gt;
+&lt;p&gt;The property of safety inf a memory manger is how it protects the developer form misusing allocations in a way the leads to functional defects. Used after free, and double free bugs are examples of unsafety in C language memory managers.&lt;/p&gt;
+&lt;h2 id=&#34;approaches&#34;&gt;Approaches&lt;/h2&gt;
+&lt;p&gt;In the next section we will compare many existing approaches to memory management used today. Each will be described and examined though the lense of efficiency, latency, throughput, and safety.&lt;/p&gt;
+&lt;h3 id=&#34;static-allocation&#34;&gt;Static Allocation&lt;/h3&gt;
+&lt;p&gt;The simplest approach is to use only static allocations. In this strategy no dynamic allocations are used and memory layout is decided at compile time. This is most often used in embedded and safety critical systems, there is zero runtime cost and no concern about allocations failing due to lack of capacity at runtime.&lt;/p&gt;
+&lt;p&gt;The down side is that the developer must know ahead of time how much memory every data structure needs. For systems that interact with outside data sources this is often not possible, and my lead to application errors if assumptions about load are incorrect.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; This depends the application but it is possible to reach very high efficiency as there is no overhead from tracking allocation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; There is zero dynamic allocation so the latency is effectively zero.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; This is not applicable as there is no allocations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Clearly there can not be a use after free, or double free bug if you never free so there are safety advantages; but to reach higher efficiency it may be that one region might be used for more then one purpose which could lead to serious errors.&lt;/p&gt;
+&lt;h3 id=&#34;bump-allocation&#34;&gt;Bump Allocation&lt;/h3&gt;
+&lt;p&gt;A Bump Allocator uses a very simple strategy where new allocations can be serviced dynamically. The work by tracking a single pointer in to available memory and incrementing the pointer to service each allocation.  This leads to a very low latency and high thought allocator but allocations can never be returned except by decrementing the free pointer. In practice most implementations of bump allocator only support resetting the free pointer to its initial state reclaiming all allocations service as a single operation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; Bump allocators have very low overhead but often lead to a large number of stale allocations leading to low efficiency.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Latency is very low as allocations can be serviced by a single increment operation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; Bump allocators achieve very high throughput.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; The lack of reclaim in bump allocators removes most allocator related unsafety issues.&lt;/p&gt;
+&lt;h3 id=&#34;manual-memory-management&#34;&gt;Manual Memory Management&lt;/h3&gt;
+&lt;p&gt;In the C language memory management is entirely manual; the programmer must explicitly ask memory to be allocated, and manually free it once it is no longer in use. This approach allows for complete control. The advantage is that the engineer can pick the trade off between resource efficiency and performance that fits the needs of there application.&lt;/p&gt;
+&lt;p&gt;For maximum performance all memory allocations can preformed prior to performance critical code, and all reclamation can be deferred until after a performance critical section. This allows carefully written code minimize latency.&lt;/p&gt;
+&lt;p&gt;The down side of manual memory management is that it is practically impossible to do safely. Use after free, double free, and other such bugs are common reasons for security critical defects, as well as crashes and memory leeks which reduce availability. Given it&amp;rsquo;s difficulty manual memory management also imposes a high cost in the development cycle where  time must be spent verifying correctness, and reworking code when issues are found (often after release).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; This approach allows very efficient use of available memory. Some issues with memory fragmentation but can occur and some overhead exists for tracking free pages suitable for allocation. Over with manual management excellent efficiency is possible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Allocates in manually managed languages tend to be low latency, but they do have a measurable cost. An advantage is that in languages like C, one can pick the allocator used. Because of this it is possible to select an allocator the meets the specific needs of the application.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; Over all allocates in manually managed languages tend have good throughput, but have a measurable cost. An advantage is that in languages like C, one can pick the allocator used. Because of this it is possible to select an allocator the meets the specific needs of the application.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Safety depends on developers. Many tools and technics have been developed to aid developers, such as static analyzers and fuzzers, but they only partially mitigate the the inherent unsafety of manual memory management.&lt;/p&gt;
+&lt;h3 id=&#34;automatic-reference-counting&#34;&gt;(Automatic) Reference Counting&lt;/h3&gt;
+&lt;p&gt;The use of reference counting was popularized in the 90&amp;rsquo;s by languages like TCL, Perl, and Python. It has seen recent resurgence in languages like ObjectiveC and Swift.&lt;/p&gt;
+&lt;p&gt;It works by keeping a counter for each allocation, incrementing the counter when a new reference to an allocations is created and decremented each time a reference is retired. When the reference count of an allocation becomes zero it is considered unused and is reclaimed.&lt;/p&gt;
+&lt;p&gt;The main advantage of reference counting is that it takes the responsibility of reclaiming memory from the developer, greatly increasing safety.&lt;/p&gt;
+&lt;p&gt;Reclamation is immediate and incremental keeping some of the best properties of manual memory management.&lt;/p&gt;
+&lt;p&gt;Languages that use reference counting usually do not allow pointer arithmetic or casting to pointers. This is necessary as this could result in uncounted references leading to use after free bugs.&lt;/p&gt;
+&lt;p&gt;One common issue with reference counting it that if the program ever creates a reference cycle, where directly or transitively, an allocation holds a reference to itself, the reference count may never go to zero and the memory will never be reclaimed.&lt;/p&gt;
+&lt;p&gt;In practice the greater issue with reference counting is the performance cost. In code that takes many short lived references the reference counter is constantly incremented and decremented. Where each of these operations are fast, over all the effect on whole program performance can be significant.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; Reference counting memory allocators will have similar efficiency to manually managed memory with the difference being the in the need to increase allocation sizes to allow for the counter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Reference counting tend to be low latency. This cost will be similar to allocations in manually managed languages; but unlike them one can not usually switch out the allocator.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; This approach takes a hit in throughput due to the cost of managing the counter. It should be noted that this cost is not payed during allocation and reclamation but during use of the allocated memory and so effects overall application performance.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Over all safety is good; removing most of the errors that lead to unsafety in memory management. One caveat is that because circular reverences prevent collection, memory may leek over time leading to to memory exhaustion.&lt;/p&gt;
+&lt;h3 id=&#34;mark-and-sweep&#34;&gt;Mark and Sweep&lt;/h3&gt;
+&lt;p&gt;Mark and sweep is a reclaim strategy which works by starting with know live allocations, referred to as roots, and scanning each allocation for reference to other allocations. This process is repeated until no new allocation are found. At this point any outstanding allocations which were not visited during the process must be unused and can be reclaimed.&lt;/p&gt;
+&lt;p&gt;In contrast to reference counting, mark and sweep will collect allocations with cyclic references and avoids the maintenance cost of the counter.&lt;/p&gt;
+&lt;p&gt;As with reference counting, languages that use reference counting usually do not allow pointer arithmetic or casting to pointers. This is necessary as this could result in uncounted references leading to use after free bugs.&lt;/p&gt;
+&lt;p&gt;One complication with mark and sweep collectors is that in there simple form, new allocations can not be made concurrently with collection. If this were avowed the new allocations may not be visited and reclaimed while they are still in use.&lt;/p&gt;
+&lt;p&gt;Because of this many mark and sweep collectors pause the application while garbage collection is running. There are implementations called concurrent mark and sweep which do not require the main program to be paused during collection, but they impose additional complexity and throughput costs.&lt;/p&gt;
+&lt;p&gt;A second artifact of a mark and sweep garbage collector is that memory is not reclaimed until the garbage collection is run. This might be long after a allocation is no longer in use. Because of this delay surprising effects in languages which support object destructors as it can not predicted when or if a destructor will ever be called.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; Mark and sweep memory allocator will have similar efficiency to manually managed memory.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Over all allocates used with mark and sweep tend to be low latency, but they do have a cost. This cost will be similar to allocations in manually managed languages; but unlike manually managed allocation one can not usually switch out the allocator.&lt;/p&gt;
+&lt;p&gt;When a using a stop the world collector, pauses add an additional unpredictable latency the the application.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; There is a wide verity of implementations of mark and sweep collection but over all collectors which stop the world tend to have higher throughput at the cost of latency, and those that have current collectors achieve lower latency at the cost of throughput.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Safety is good removing most of the errors that lead to unsafety in memory management.&lt;/p&gt;
+&lt;h3 id=&#34;compacting-garbage-collection&#34;&gt;Compacting Garbage Collection&lt;/h3&gt;
+&lt;p&gt;Compacting garbage collectors try to increase memory efficiency by moving allocations into contiguous memory ranges during garbage collection, reducing fragmentation.&lt;/p&gt;
+&lt;p&gt;The cost of compaction is that memory must be copied and pointers must be updated to reference new memory locations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; Compacting can have positive impacts on efficiency by removing fragmentation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Compacting can reduce allocation latency but pauses due to garbage collection may get longer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; The time spent moving memory during compaction negatively effects throughput.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Compaction dose not have a positive or negative effect on safety.&lt;/p&gt;
+&lt;h3 id=&#34;generational-allocation&#34;&gt;Generational allocation&lt;/h3&gt;
+&lt;p&gt;Generational allocation is a variation of a compacting garbage collector. They are based on the observation that most allocations have short life times. Using this idea it divides the allocations in to new and old types. All allocations start as new. The new allocator is optimized for latency and throughput at the cost of efficiency. When a collection cycle occurs, all in use new allocations are moved to the old generation. THe old generation allocator uses an strategy which makes more efficient use of memory at some cost to latency and throughput.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; This approach keeps much of the efficiency gains of compaction, and should have similar advantages.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Allocation latency in generational allocation is very low; but may be paused if a collection cycle is occurring.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; The time spent moving memory during compaction negatively effects throughput, but new generation allocation is very high thruput; resulting is good throughput for bursty allocation patters.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; Compaction dose not have a positive or negative effect on safety.&lt;/p&gt;
+&lt;h3 id=&#34;static-lifetime-analysis&#34;&gt;Static Lifetime Analysis&lt;/h3&gt;
+&lt;p&gt;An approach that has gained reascent popularity is static life time analysis. This approach is most like manually memory management, but instead of the developer being responsible for deciding when an allocation is not needed and manually freeing memory, the compiler uses static analysis to automatically insert calls to free the memory. This approach was brought to public attention by the Rust programming language but also exists C++ as RAII, and is also implemented by linear types in langues like AST.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; This approach like manual memory management puts the developer in control allowing for very high efficiency.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Latency will match that of manual memory management and will be dependent on the underlying allocator.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; Like Latency throughput will match that of manual memory management and will be dependent on the underlying allocator.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; The use of static analysis can completely remove the safety issues associated with manual memory management making this approach very safe.&lt;/p&gt;
+&lt;h1 id=&#34;collections-data-structures&#34;&gt;Collections Data Structures&lt;/h1&gt;
+&lt;p&gt;An potentially surprising entry in the list of memory management approaches are data structures. The type of structures we are talking about are ones that hold many values such as list, maps, and arrays. High performance implementations of these data structures must carefully arrange stored records to minimize overhead and maximize performance.&lt;/p&gt;
+&lt;p&gt;A simple example of this is automatically resized arrays. These are vectors of values which support indexing and iteration. A common way to implement this structure to have a underlying fixed size array of liner memory. THe capacity of the array is dabbled anytime its capacity is exceeded. This doubling is preformed by allocating a new array and then copying the existing values in to the new array. The original backing array is then reclaimed.&lt;/p&gt;
+&lt;p&gt;While the data structure is built on top of a second allocator it also acts as one.&lt;/p&gt;
+&lt;p&gt;Collections implementations must know is when it is safe to free any old backing memory. In the case where only small values are stored it may be posable to alway resolve reads by value, but if it is necessary to return references to records or use the collection in concurrently the collection must implement reference counting, life time analysis, etc must be used.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Efficiency:&lt;/strong&gt; The reason that collections implement custom allocation strategies is increase efficiency so they are usually quite efficient for their use case.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Latency:&lt;/strong&gt; Latency will also often be very good if the appropriate data structure is picked for the workload.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Throughput:&lt;/strong&gt; Likewise throughput will often be good if the data structure chosen matches the workload.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Safety:&lt;/strong&gt; The safety of this approach based on the API provided which is often influenced by the underlying memory management approach. Overall there is not a single answer to the question of safety for collections and it must be answered for each collection independently.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We have described many different approaches to memory management, each with different goals, costs, and benefits. When we detail the Colang design it will be a mixture of these approaches optimized for the Colang execution model.&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Why Colang</title>
+                <link>/posts/why-colang/</link>
+                <guid isPermaLink="true">/posts/why-colang/</guid>
+                <pubDate>Sun, 26 Feb 2023 10:19:31 -0800</pubDate>
+                
+                    <author>moore@eds.org (Jonathan Moore)</author>
+                
+                
+                
+                    <description>&lt;h1 id=&#34;why-colang&#34;&gt;Why Colang&lt;/h1&gt;
+&lt;p&gt;There is a gap in the current popular languages being used. Most services APIs are still written in high level languages from the 90&amp;rsquo;s. These were designed based on lessons and assumptions about computing thirty yeas ago.&lt;/p&gt;
+&lt;p&gt;We are seeing lots of innovation in programing language design, Rust, Swift, Kotlin, and Go have see lots of growth and are supported by large corporations; others such Zig and Nim have popular fallowing and are growing. One thing all these languages have in common is that they were built largely as alternatives enterprises or systems languages:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- C++ -&amp;gt; Rust
+- ObjectiveC -&amp;gt; Swift
+- Java -&amp;gt; Kotlin
+- C -&amp;gt; Go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is not to say each had no other goals, or that in all cases the replacement is one to one; but overall the current innovation is around languages in this domain.&lt;/p&gt;
+&lt;p&gt;Where systems and enterprise languages are important, much of the code written today is to build service APIs and written in high level languages such as JavaScript, Python, and PHP. The high level language category has seen some innovation with examples like TypeScript and Elm. Both TypeScript and Elm work to provide correctness and offer improvements in developer esperance, but both in practice are largely JavaScript replacements targeted at in browser applications.&lt;/p&gt;
+&lt;p&gt;For all the code that runs on servers and not written in a systems language, we have seen little innovation.&lt;/p&gt;
+&lt;p&gt;Code which runs on servers is important code. It costs organizations money to run, the time it takes to run effects latency for clients, and avoided computation can lead to a reduction in carbon emissions. For all these reasons I think it is worth trying to improve the performance and efficiency of the code we run on servers.&lt;/p&gt;
+&lt;h2 id=&#34;why-are-high-level-languages-inefficient&#34;&gt;Why are high level languages inefficient&lt;/h2&gt;
+&lt;p&gt;Todays popular high level languages, PHP, Python, JavaScript, are all dynamically typed, garbage collected languages, which use heap allocations for most types.&lt;/p&gt;
+&lt;p&gt;At the time they were designed most commercial code was written in C or Pascal, and their features made them much easer to learn, safer, and offered quicker to development. They were also all slow; but at the time, in late 80&amp;rsquo;s early 90&amp;rsquo;s, the web was starting to take off and the single threaded performance of computers was doubling every eighteen months. In this environment it was more effective to optimism for developer time rather than execution performance.&lt;/p&gt;
+&lt;p&gt;Today we have to live with there inefficiencies but are no longer getting a free ride from the work of CPU manufactures. Languages like JavaScript have made great strides in in performance but at the cost of complex multi stage optimizing JIT compilers; but even after this work JavaScript is still significantly slower that low level languages.&lt;/p&gt;
+&lt;p&gt;The source of the the inefficient execution comes down to two design choices. First the use of general purpose garbage collection, and second the use of dynamic typing a dispatch.&lt;/p&gt;
+&lt;h2 id=&#34;another-approach&#34;&gt;Another Approach&lt;/h2&gt;
+&lt;p&gt;In fallowing posts we will describe a language architecture we call Colang. Colang attempts to address both the inefficiencies of general purpose GC, as well as dynamicism.&lt;/p&gt;
+&lt;p&gt;The key design choices are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The language runs in an event loop.&lt;/li&gt;
+&lt;li&gt;Initial allocations use a bump allocator.&lt;/li&gt;
+&lt;li&gt;Garbage collection only happens after exiting to the event loop.&lt;/li&gt;
+&lt;li&gt;All long lived allocations are owned by collections.&lt;/li&gt;
+&lt;li&gt;It will be high level but largely static language.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;why-event-loops&#34;&gt;Why Event Loops&lt;/h3&gt;
+&lt;p&gt;The use of an event loop is driven by a few observations.&lt;/p&gt;
+&lt;p&gt;Event loops have been successful in languages such as javascript, and more generally event driven systems.&lt;/p&gt;
+&lt;p&gt;Event loops compatible with async programming which is important for high request concurrency.&lt;/p&gt;
+&lt;p&gt;Lastly, and more importantly, when execution exits back to the event loop, the run time is provided clear and convent time to preform garbage collection which will never stall active work.&lt;/p&gt;
+&lt;h3 id=&#34;why-a-bump-allocator&#34;&gt;Why a bump allocator&lt;/h3&gt;
+&lt;p&gt;Bump allocators have been shown to be very efficient new generation allocators in generational garbage collectors such as the JVM. They require almost no book keeping, and most new allocations are ephemeral meaning in practice most memory never has to be moved.&lt;/p&gt;
+&lt;h3 id=&#34;why-collections-for-long-lived-allocations&#34;&gt;Why collections for long lived allocations&lt;/h3&gt;
+&lt;p&gt;We observe that efficient collections (vector, list, map, etc) each implements their own memory management strategy. This is true even in garbage collected languages. We further assert, with out evidence, that the majority of long lived allocations are held in a collection. It is there for natural to manage log lived allocations using the memory management implemented by collection which owns it.&lt;/p&gt;
+&lt;h3 id=&#34;why-static&#34;&gt;Why Static&lt;/h3&gt;
+&lt;p&gt;We hypotheses that slow performance in high level languages is due not to being highly expressive but due to being dynamic.&lt;/p&gt;
+&lt;p&gt;Dynamic dispatch require runtime checks and prevent the complier from preforming many optimizations. Advanced JITs, such as JavaScript runtimes found in browsers, try to avoid the penalty dynamicism by assuming that types don&amp;rsquo;t change; but JavaScript engines must still include checks for when type guesses are wrong, and the checks fail they must recompile.&lt;/p&gt;
+&lt;p&gt;Dynamic types require checks on every use which impacts reliability as it results in runtime type errors, and like dynamic dispatch, dynamic types also prevent the use of common complier optimizations.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Colang is a language architecture, and hopefully one day a language, which attempts to be a high level language for weighting services in. It&amp;rsquo;s main goal is to provided a developer experience on par with languages like python, JavaScript, and PHP.&lt;/p&gt;
+&lt;p&gt;It is not meant to be a systems language, but strives give up little performance compared to a systems language.&lt;/p&gt;
+&lt;p&gt;In future posts we will explore in more detail the approach to execution and garbage collection, as well as consider the design of the type system.&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Entanglement Is Space Only</title>
