@@ -7,14 +7,34 @@ draft: true
 
 The core design goal of the Colang event loop is to support low latency, efficient and safe memory management. 
 
-The key challenge in memory management is knowing when some allocation is no longer in use and can be reclaimed. Once some memory is reclaimed it will either be returned to the operating system or recycled in the process to satisfy a subsequent dynamic memory allocation.
+The key design choices are:
 
-There are many approaches to memory management today. All approaches must ballance between:
+1. The language runs in an event loop.
+2. Use a pseudo generational allocator.
+3. All long lived allocations are owned by collections.
+4. It will be high level but largely static language.
 
-1. Efficiency
-2. Latency
-3. Throughput
-4. Safety
+### Why Event Loops
+The use of an event loop is driven by a few observations.
+
+Event loops have been successful in languages such as javascript, and more generally event driven systems. 
+
+Event loops compatible with asynchronous programming models which needed to support high request concurrency.
+
+Lastly, and more importantly, when execution exits back to the event loop, the run time is provided clear and convent time to preform garbage collection which will never stall an active request.
+
+### Why generational allocator.
+Generational allocators have been shown to support very low latency allocations, and support effechent managemnt 
+
+### Why collections for long lived allocations
+We observe that efficient collections (vector, list, map, etc) each implements their own memory management strategy. This is true even in garbage collected languages. We further assert, with out evidence, that the majority of long lived allocations are held in a collection. It is there for natural to manage log lived allocations using the memory management implemented by collection which owns it.
+
+### Why Static
+We hypotheses that slow performance in high level languages is due not to being highly expressive but due to being dynamic.
+
+Dynamic dispatch require runtime checks and prevent the complier from preforming many optimizations. Advanced JITs, such as JavaScript runtimes found in browsers, try to avoid the penalty dynamicism by assuming that types don't change; but JavaScript engines must still include checks for when type guesses are wrong, and the checks fail they must recompile.
+
+Dynamic types require checks on every use which impacts reliability as it results in runtime type errors, and like dynamic dispatch, dynamic types also prevent the use of common complier optimizations.
 
 ## Allocation and Reclamation
 Memory management incurs latency because, both in kernel and in process, the finding, tracking, and reclaiming of memory regions involves non trivial data structures and algorithms.
