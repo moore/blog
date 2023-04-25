@@ -1,18 +1,18 @@
 ---
 title: "LLMs Spring 2023"
 date: 2023-04-23T11:53:42-07:00
-draft: true
+draft: false
 ---
 
 # LLMs and AI (Spring 2023)
 
-On March 14, 2023, GPT-4 was released, and the world entered a new era. Following this, there has been a frenzy of development in the AI space, with LLMs such as Alpaca, Bard, and many others. At the same time, there has been a parallel uptick in hand-wringing; calls for regulation, a pause on development, and much speculation about what might happen. Despite the risks, I believe that the power of the current LLMs is too great to not use, and that any party which tries to hold off will simply fall behind, whether it's an individual, corporation, or nation.
+On March 14, 2023, GPT-4 was released, and the world entered a new era. Following this, there has been a frenzy of development in the AI space, with LLMs (Large Language Models) such as Alpaca, Bard, and many others. At the same time, there has been a parallel uptick in hand-wringing; calls for regulation, a pause on development, and much speculation about what might happen. Despite the risks, I believe that the power of the current LLMs is too great to not use, and that any party which tries to hold off will simply fall behind, whether it's an individual, corporation, or nation.
 
 These models are dangerous. We do not understand how to secure them, and they are prone to providing confident answers even when they are wrong. If we must use them, we should spend time on developing approaches to mitigate the risks while still gaining most of their usefulness. I am not implying we must solve the inherent defects in the LLMs; rather, I am suggesting that we use them as they are while simultaneously developing safeguards around them.
 
 The rest of this post is dedicated to sharing my current understanding of LLMs and AI as it stands at the time of this post. I will describe why I believe that the common characterization of LLMs as mere "next-word predictors" is wrong, why we should be worried about adversarial attacks on AI, and along the way, offer resources about the research.
 
-## LLMs Are More Then Next Word Predictors
+## LLMs Are More Than Next Word Predictors
 
 The description one commonly hears about LLMs, like GPT-4, is that they are primarily next-word predictors. While this is technically correct, the common presentation is that LLMs are like a large table that, for some input sequence of words, contains the most probable following words. This way of thinking about LLMs is reasonable, given how they are trained:
 
@@ -28,7 +28,7 @@ For a deeper treatment of this topic paper *Sparks of Artificial General Intelli
 
 ## Adversarial attacks on AI
 
-Some of the risks of LLMs are how they may be used, automation of phishing, and and disinformation campaigns for example, but here we will address attacks on the AI models them selves. There are three types of attacks I will discuss:
+Some of the risks of LLMs are how they may be used, automation of phishing, and and disinformation campaigns for example, but here we will address attacks on the AI models themselves. There are three types of attacks I will discuss:
 
 1. Attacks against safety controls.
 2. Data poisoning attacks at training.
