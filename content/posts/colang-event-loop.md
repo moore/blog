@@ -1,27 +1,25 @@
 ---
 title: "Colang Event Loop"
 date: 2022-11-26T19:03:05-08:00
-draft: true
+draft: false
 ---
 # Colang Event Loop
 
 The core design goal of the Colang event loop is to support low latency, efficient and safe memory management. 
 
-The key design choices are:
-
-1. The language runs in an event loop.
-2. Use a pseudo generational allocator.
-3. All long lived allocations are owned by collections.
-4. It will be high level but largely static language.
-
-### Why Event Loops
+## Why Event Loops
 The use of an event loop is driven by a few observations.
 
-Event loops have been successful in languages such as javascript, and more generally event driven systems. 
+Event loops have been successful in languages such as javascript, and more generally event driven systems. This offers a proof point the accessability of the approach to the development community as well of there ability to be deployed in our target domain of backend services.
 
-Event loops compatible with asynchronous programming models which needed to support high request concurrency.
+Event loops are compatible with asynchronous programming models which are needed to support high request concurrency.
 
-Lastly, and more importantly, when execution exits back to the event loop, the run time is provided clear and convent time to preform garbage collection which will never stall an active request.
+Lastly, when execution returns back to the event loop, the run time is provided clear and convent time to preform garbage collection which will never stall an active request.
+
+## Allocation Strategy 
+
+Our allocation strategy will leverage the properties of the event loop.
+
 
 ### Why generational allocator.
 Generational allocators have been shown to support very low latency allocations, and support effechent managemnt 
