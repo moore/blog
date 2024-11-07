@@ -21,10 +21,52 @@
             <webMaster>moore@eds.org (Jonathan Moore)</webMaster>
         
         
-        <lastBuildDate>Tue, 25 Apr 2023 11:16:11 -0700</lastBuildDate>
+        <lastBuildDate>Wed, 22 Nov 2023 14:24:19 -0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="/rss.xml" />
         
+        
+            <item>
+                <title>Ai Is Not a Simulation</title>
+                <link>/posts/ai-is-not-a-simulation/</link>
+                <guid isPermaLink="true">/posts/ai-is-not-a-simulation/</guid>
+                <pubDate>Wed, 22 Nov 2023 08:04:35 -0800</pubDate>
+                
+                    <author>moore@eds.org (Jonathan Moore)</author>
+                
+                
+                
+                    <description>&lt;p&gt;I was having a conversation with a group of AI researchers, and we eventually turned to the topic of whether AI is a simulation of human intelligence. I believe this view is incorrect and potentially dangerous.&lt;/p&gt;
+&lt;p&gt;I think it&amp;rsquo;s more accurate to view our goal in AI as creating systems that are at least as &lt;em&gt;capable&lt;/em&gt; as humans, though they will most likely operate very differently.&lt;/p&gt;
+&lt;p&gt;The closest model we have to the human mind is &lt;a href=&#34;https://en.wikipedia.org/wiki/Spiking_neural_network&#34;&gt;Spiking Neural Networks&lt;/a&gt;. However, despite some advantages, they are unlikely to become the mainstream approach for practical AI applications. &lt;a href=&#34;https://en.wikipedia.org/wiki/Geoffrey_Hinton&#34;&gt;Geoffrey Hinton&lt;/a&gt; has identified a key limitation of the spiking model: it can only learn linearly, whereas other models, such as the widely-used Transformer, can learn in parallel. Multiple instances of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)&#34;&gt;Transformer&lt;/a&gt; model can learn from various examples and then be combined into a single model that encompasses the sum of what was learned individually.&lt;/p&gt;
+&lt;p&gt;There are other notable differences too:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Each human brain has a unique arrangement of connections between neurons, which means one could never directly copy memories from one brain to another. In contrast, our digital AI models can be run on any universal computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Backpropagation used in transformers (which cannot work in spiking models) is a more efficient way to learn, allowing for more extensive learning from each example shown.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In terms of parameter counts, human brains are much larger than our largest models. However, our large models have learned from larger datasets than any human ever could.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But why is it wrong to think of AI models as simulations of human intelligence?&lt;/p&gt;
+&lt;p&gt;If we regard AI as similar to us, this could lead to &lt;a href=&#34;https://en.wikipedia.org/wiki/False_consensus_effect&#34;&gt;consensus bias&lt;/a&gt;, where we assume that AI systems think about situations in the same way we do. This assumption will likely lead us to mispredict their behavior, potentially in dangerous ways.&lt;/p&gt;
+&lt;p&gt;Furthermore, by thinking of AIs as simulations of us, I believe we inadvertently strip them of agency. While considering AI as entities with rights and goals is controversial today and may not currently be practical, we must take this idea seriously as advancements continue. I hope that when we eventually discuss AI agency, we see AIs as having their own unique identities, not as a lesser form of ourselves.&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>LLMs Spring 2023</title>

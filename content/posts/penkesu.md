@@ -1,141 +1,107 @@
 ---
+
 title: "Penkesu"
 date: 2024-11-03T15:54:45-08:00
-draft: true
+draft: false
 ---
 
-I often find myself sittan waiting for one thing or another and
-intherse intersitial moments succumbing to impulse to conume
-"content". Instead I would much rather be creating, but find the
-device at hand, my phone, to be designed only for consumption.
+![Penkesu hobby computer sitting on desk.](/penkesu/penkesu-finished.jpg)
 
-In an attempt to improve this situation I am building a series of
-potable devices made for input. Penkesu is the first. It is a build of
-anothers's design and I am using it as a path finder device that will
-teach me more about what I want.
+I often find myself sitting and waiting for one thing or another. In these interstitial moments, I succumb to the impulse to consume 'content.' Instead, I would much rather be creating, but I find the device at hand, my phone, is designed only for consumption.
 
-## Missing Build Instrctuions
+In an attempt to improve this situation, I am building a series of portable devices made for input. [Penkesu](https://github.com/penk/penkesu) is the first. It is a handheld computer built from another's design which I am using as a pathfinder device to learn more about what I want.
 
-If you want to try to build one yourself fallow the instructions on
-the Penkesu github. My notes on the build are:
+## Missing Build Instructions
 
- 1. The bill of materials omits the needed USB cables.
- 2. It can be very hard to fit a usb connector for the keyboard in the case.
- 3. A switch is needed for power on/off. 
- 4. The screen is very heavy and screen will not stand on it's own for me.
- 5. It is not clear what orientation the hinges should be installed in.
- 
+If you want to try to build one yourself, follow the instructions on the [Penkesu GitHub](https://github.com/penk/penkesu). My notes on the build are:
+
+1. The bill of materials omits the needed USB cables.
+2. It can be very hard to fit a USB connector for the keyboard in the case.
+3. A switch is needed for power on/off.
+4. The screen is very heavy, and the hinges do not support it adequately.
+5. It is not clear what orientation the hinges should be installed in.
+
 ### Missing USB Cables
 
 #### Display Power
 
-To assemble the computer you will need a power only cable with a usb
-mirico connector to supply the display. I would suggest making this
-yourself to minimise the diamater of the cable as it has to get
-through the hinge along with the DVI ribben cable.
+To assemble the computer, you will need a power-only cable with a micro USB connector to supply the display. I would suggest making this yourself to minimize the diameter of the cable, as it has to get through the hinge along with the DVI ribbon cable.
 
-I assembled mine out of these connectors and sicilcone wire. The other
-end of the cable attaches to the power output on the board.
+I assembled mine out of connectors seen in the photo blow and silicone wire. The other end of the cable attaches to the power output on the board.
+
+![Micro USB connector with power and ground wires connected.](/penkesu/penkesu-screen-power.jpg)
+
+In addition I needed to modify the case to fit the usb connector as seen below.
+
+![Modified 3D printed case with room for usb connector.](/penkesu/penkesu-usb-screen-mod.jpg)
+
+![Image showing connector clearance with modified case.](/penkesu/penkesu-screen-usb-clearnance.jpg)
 
 #### Keyboard Cable
 
-A cable is needed between the mircocontoler on the keyboard and the
-miroco USB conector on the rpi. I made this cable using the same
-connector I used to power the display. I found due to the limited
-space in the case I needed to make my own connector agine.
+A cable is needed between the microcontroller on the keyboard and the micro USB connector on the Raspberry Pi. I made this cable using the same connector I used to power the display. I found due to the limited space in the case I needed to make my own cable.
 
-### USB Connector on Keyboard
+I started with the Arduino Pro Micro that the original project used. Mine, an [OSOYOO](https://www.amazon.com/OSOYOO-ATmega32U4-Leonardo-Module-Arduino/dp/B0B81FGBLY) came with a USB-C connector instead of a micro USB. I thought this would be a better connector but I could not find a male connector or cable that would fit in the case. It might have worked if I had a Pro Micro with a micro USB connector, but in the end, I switched to an [Adafruit KB2040](https://www.adafruit.com/product/5302) which has the D+ and D- pins broken out. This let me skip the connector completely and solve the space constraint issue.
 
-I started with the Ardino Pro Mrico that the original project
-used. Mine unlike theirs came with a USB-C connector. I could not find
-a male connector or cable that would fit in the case. It might have
-worked if I had a Pro Mrico with a mrico usb connector, but in the end
-I switched to a Adafruit KB2040 which has the D+ and D- pins broken
-out. This let me skip the connector completely and solve the space
-issue.
+![KB2040 with USB wires soldered on.](/penkesu/penkesu-kbd-usb.jpg)
 
-The KB2040 brought issues of it's own. The QMK ferimware for the
-keyboard has not been maintained and would not compile. I have never
-worked with QMK and chose to write a quick driver with KMK instead of
-trying to modernize it. You can find that here.
+I decided to socket the KB2040 so that if something else went wrong I would not have to build a third keyboard. To keep the clearances low, I used a low-profile socket. I also used header pins with the black plastic spacer removed to further reduce the height. To make sure things fit in the header socket and get the depth of the pins right, I soldered the pins to the board with the pins inserted into the socket.
+
+![KB2040 on back of keyboard waiting to be soldered.](/penkesu/penkesu-solder-kb2040.jpg)
+
+The KB2040 brought issues of its own. The QMK firmware for the keyboard has not been maintained and would not compile with the current QMK version. I have never worked with QMK and chose to write a quick driver with KMK, a simple to use Python-based firmware, instead of trying to modernize the QMK driver. You can find that at [https://github.com/moore/penkesu-keyboard-kmk](https://github.com/moore/penkesu-keyboard-kmk).
 
 ### Power Switch
 
-A switch is needed for power. I used one of these.
+![Small switch with wires attached.](/penkesu/penkesu-power-switch.jpg)
+
+A switch is needed for power. I used an SS-12D00 switch, which fit well into the designated space in the 3D print. I secured it by applying epoxy to hold it in place.
 
 ### The Heavy Display
 
-The display is clearly designed for non mobile applacations. It has
-heavy glass, metial back plate with standoffs. The contoler is also
-mounted to the back. I think the vendor expects you to mount your rpi
-to the display. This means that the display is about 1cm thick and
-most of the wait of the device. My screen will not sit at a useful
-height unless there is something proping up the hinge. This might also
-be becouse I did not correctly install the hinges.
+The display is clearly designed for non-mobile applications, it has thick glass, a metal backplate, and steel standoffs. Additionally the display controller is also mounted to the back. I believe the vendor expects one to mount a Raspberry Pi to the back of the display. All these design features means that the display is about 1 cm thick and accounts for most of the weight of the whole computer. As a result my screen will not sit at a useful angle unless there is something propping up the hinge. (This might also be because I did not correctly install the hinges.)
 
-### Hinge Orentation
- 
-The DS hinges used have detents in them but it is not clear what the
-correct rotation for the display is. I glued mine in so the detent was
-in the "latched" state when closed. This might have been wrong there
-were no notes on the correct way to do this.
+![Round metal tool used to hold screen up.](/penkesu/penkesu-screen-prop.jpg)
+
+### Hinge Orientation
+
+The DS hinges used have detents in them, but it is not clear what the correct way to orient them is. I glued mine in so the detent was in the "latched" state when closed. This might have been wrong; there were no notes on the correct way to install them.
 
 ## Other Notes
 
-### Cable managment and  JST Connectors
+### Cable Management and JST Connectors
 
-I connectorized a coupple of the cables with JST connectors. This did
-help he when working out the design but I have found them to make it
-harder to fit everything in the 1cm space under he keyboard.
+![The Penkesu with mess of cables and connectors.](/penkesu/penkesu-cable-mess.jpg)
 
-There are many cables that need to cross over each other. This
-combined with the reality that my bratty had to move right as it would
-not fit under the keyboard controler meant that managing cables was
-fiddely. I should probbly go back in and shorten some of them and
-remove the JST connectors.
+I connectorized a couple of the cables with JST connectors. This did help me when working out the design, but I have found them to make it harder to fit everything in the 1 cm space under the keyboard.
 
-### Power Managment
+There are many cables that need to cross over each other. This, combined with the reality that my battery had to move to the right to leave space for the keyboard controller, meant that managing cables is quite fiddly. I should probably go back in and shorten some of them and remove the JST connectors.
 
-There are two issues with power managment:
+### Power Management
 
- 1. The rip zero has not sleep mode.
- 2. There is no access to the battrie state. 
- 
-The lowest poser draw from the rpi zero 2 is around 100mw which is
-significant. There is also no lid switch to turn off the display or
-other devices when closed. The hardware also dose not have a way to
-turn off the display thou its possible the back light could be turned
-off.
+There are two issues with power management:
 
-The power control board dose have a low battery pin that is pulled
-low. It would be worth adding logic to check that with a rpi GPIO.
+1. The Raspberry Pi Zero does not have sleep mode.
+2. There is no access to the battery's state.
 
-There are lights for power, charging, and low bat, on the board but no
-pins for them. I might try to bring then to the side with light
-pipes. One could also try and move the LEDs to the out side of the
-case by desoldering them and adding cables.
+The lowest power draw from the Raspberry Pi Zero 2 is around 100 mW, which is significant. There is also no lid switch to turn off the display or peripherals when closed.
+
+The power control board does have a low battery pin that is pulled low when the battery is low. It would be worth adding logic to check that with a GPIO on the Raspberry Pi.
+
+There are lights for power, charging, and low battery on the board but no pins for any but low battery. I might try to bring the light to the side with light pipes. One could also try and move the LEDs to the outside of the case by desoldering them and adding cables.
 
 ### Touch Screen
 
-The display has a touch sensor but the design dose not use it. To
-enable it a usb hub like this one would be needed as there is a singe
-USB port on the rpi zero. Adding the USB cord from the display and the
-USB hub could complacate cable routing further.
+The display has a touch sensor but the design does not use it. To enable it, a USB hub like the [Adafruit CH334F](https://www.adafruit.com/product/5999) would be needed; there is a single USB port on the Raspberry Pi Zero, and it is used for the keyboard. Adding the USB cord from the display and the USB hub could complicate cable routing further.
 
 ### Display Rotation
 
-To rotate the console the fallowing must be added to the kernel command line  in */boot/firmware/cmdline.txt*: 
+To rotate the console, the following must be added to the kernel command line in */boot/firmware/cmdline.txt*:
 
 > video=HDMI-A-1:400x1280M@60,rotate=270
 
-## Final thoughts
+## Final Thoughts
 
-I do like the build and have learned lots of things to consider in my
-first original design if I get to that.
+I'm glad I built the Penkesu and have learned a lot from the process. It already serves well as a portable hack box. If you're interested in building one and the cost of the screen fits your budget, I highly recommend giving it a try.
 
-The device is already working in the role of a portable hack box.
-
-I can say I am glad I built it and would recommend others that are
-interestead give it a try if the expincive screen is in there budget.
-
-P.S. I have started collecting notes on my next build hear.
+P.S. I have started collecting notes on my next build [Trick-Box](https://github.com/moore/trick-box).
