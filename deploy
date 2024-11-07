@@ -1,6 +1,6 @@
 #!/bin/sh
 USER=moore_0xa9f4
-HOST=ssh.phx.nearlyfreespeech.net
+HOST=ssh.nyc1.nearlyfreespeech.net
 DIR=../public   # the directory where your web site files should go
 
 hugo && rsync -avz --delete public/ ${USER}@${HOST}:~/${DIR} # this will delete everything on the server that's not in the local public folder 
